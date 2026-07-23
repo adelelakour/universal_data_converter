@@ -1,7 +1,6 @@
 import sys
 from pathlib import Path
-
-from parsers import read_json_input
+from parsers import read_json
 
 required_fields = [
     "id",
@@ -23,7 +22,7 @@ allowed_status = [
 ]
 
 
-def validate_json_schema(data:dict):
+def validate_schema(data:dict):
 
     if "tests" not in data:
         raise ValueError("Missing 'tests' section.")
@@ -33,8 +32,7 @@ def validate_json_schema(data:dict):
             if not key in test:
                 raise KeyError(f"missing key {key} in test {index}")
 
-
-def validate_json_data_types(data:dict):
+def validate_data_types(data:dict):
     for  index, test in enumerate(data["tests"], start=1):
         #validate id
         if not isinstance(test["id"], int):
@@ -73,7 +71,6 @@ def validate_json_data_types(data:dict):
         #validate timestamp
         if not isinstance(test["timestamp"], str):
             raise TypeError(f"timestamp in test {index} isn't a string")
-
 
 def validate_status_field(data:dict):
     for index, test in enumerate(data["tests"]):

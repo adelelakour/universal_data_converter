@@ -1,31 +1,55 @@
 #!/usr/bin/env python3
 import parsers
+import writers
 import validator
 import sys
 from pathlib import Path
 
 
-def main():
+def main() -> None:
     input_file_name = sys.argv[1]
-    # output_file_name = sys.argv[2]
+    output_file_name = sys.argv[2]
+    #file paths
     INPUT_FILE = Path("input") / input_file_name
-    retrieved_data = parsers.read_json_input(INPUT_FILE)
+    OUTPUT_FILE = Path("output") / output_file_name
 
-    try:
-        validator.validate_json_schema(retrieved_data)
-    except KeyError as e:
-        print(f"validation failed, {e}")
-    except ValueError as e:
-        print(f"validation failed, {e}")
+    if INPUT_FILE.suffix == ".json":
+        retrieved_data = parsers.read_json(INPUT_FILE)
+        try:
+            validator.validate_schema(retrieved_data)
+            validator.validate_data_types(retrieved_data)
+            validator.validate_status_field(retrieved_data)
+        except (KeyError, ValueError, TypeError) as e:
+            print(f"Error message is {e}")
+            return
 
-    try:
-        validator.validate_json_data_types(retrieved_data)
-    except TypeError as e:
-        print(f"Error message is {e}")
-    except ValueError as e:
-        print(f"Error message is {e}")
+    elif INPUT_FILE.suffix == ".csv":
+        retrieved_data = parsers.read_csv(INPUT_FILE)
+        try:
+            validator.validate_schema(retrieved_data)
+            validator.validate_data_types(retrieved_data)
+            validator.validate_status_field(retrieved_data)
+        except (KeyError, ValueError, TypeError) as e:
+            print(f"Error message is {e}")
+            return
 
-    return True
+    elif INPUT_FILE.suffix == ".yaml":
+        retrieved_data = parsers.read_yaml(INPUT_FILE)
+        try:
+            validator.validate_schema(retrieved_data)
+            validator.validate_data_types(retrieved_data)
+            validator.validate_status_field(retrieved_data)
+        except (KeyError, ValueError, TypeError) as e:
+            print(f"Error message is {e}")
+            return
+
+
+    if OUTPUT_FILE.suffix == ".json":
+        writers.write_json(retrieved_data, OUTPUT_FILE)
+    elif OUTPUT_FILE.suffix == ".yaml":
+        writers.write_yaml(retrieved_data, OUTPUT_FILE)
+    elif OUTPUT_FILE.suffix == ".csv":
+        writers.write_csv(retrieved_data, OUTPUT_FILE)
 
 
 if __name__ == "__main__":
