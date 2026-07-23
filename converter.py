@@ -14,9 +14,16 @@ def main():
     try:
         validator.validate_json_schema(retrieved_data)
     except KeyError as e:
-        print(f"validation failed {e}")
+        print(f"validation failed, {e}")
+    except ValueError as e:
+        print(f"validation failed, {e}")
 
-
+    try:
+        validator.validate_json_data_types(retrieved_data)
+    except TypeError as e:
+        print(f"Error message is {e}")
+    except ValueError as e:
+        print(f"Error message is {e}")
 
     return True
 
