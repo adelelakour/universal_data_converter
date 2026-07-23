@@ -1,0 +1,85 @@
+{
+  "project": "Autonomous Vehicle Validation",
+  "version": "1.0",
+  "generated_at": "2026-07-23T14:30:00Z",
+  "tests": [
+    {
+      "id": 1001,
+      "name": "Emergency Braking",
+      "category": "Safety",
+      "status": "Passed",
+      "priority": "Critical",
+      "duration": 2.8,
+      "vehicle": "Car-A",
+      "environment": "Simulation",
+      "temperature": 24,
+      "executed_by": "CI",
+      "timestamp": "2026-07-22T09:15:00Z"
+    },
+    {
+      "id": 1002,
+      "name": "Lane Keeping",
+      "category": "Perception",
+      "status": "Failed",
+      "priority": "Critical",
+      "duration": 6.4,
+      "vehicle": "Car-A",
+      "environment": "Real",
+      "temperature": 31,
+      "executed_by": "Alice",
+      "timestamp": "2026-07-22T09:40:00Z"
+    },
+    {
+      "id": 1003,
+      "name": "Parking Assist",
+      "category": "Planning",
+      "status": "Passed",
+      "priority": "Medium",
+      "duration": 8.1,
+      "vehicle": "Car-B",
+      "environment": "Simulation",
+      "temperature": 22,
+      "executed_by": "Bob",
+      "timestamp": "2026-07-22T10:10:00Z"
+    },
+    {
+      "id": 1004,
+      "name": "Adaptive Cruise Control",
+      "category": "Control",
+      "status": "Failed",
+      "priority": "High",
+      "duration": 4.7,
+      "vehicle": "Car-C",
+      "environment": "Real",
+      "temperature": 28,
+      "executed_by": "CI",
+      "timestamp": "2026-07-22T10:45:00Z"
+    },
+    {
+      "id": 1005,
+      "name": "Traffic Sign Recognition",
+      "category": "Perception",
+      "status": "Passed",
+      "priority": "High",
+      "duration": 3.2,
+      "vehicle": "Car-B",
+      "environment": "Simulation",
+      "temperature": 25,
+      "executed_by": "Alice",
+      "timestamp": "2026-07-22T11:15:00Z"
+    },
+    {
+      "id": 1006,
+      "name": "Pedestrian Detection",
+      "category": "Safety",
+      "status": "Failed",
+      "priority": "Critical",
+      "duration": 7.5,
+      "vehicle": "Car-C",
+      "environment": "Real",
+      "temperature": 35,
+      "executed_by": "Bob",
+      "timestamp": "2026-07-22T11:40:00Z"
+    }
+  ]
+}
