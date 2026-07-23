@@ -17,6 +17,12 @@ required_fields = [
     "timestamp"
 ]
 
+allowed_status = [
+    "Passed",
+    "Failed"
+]
+
+
 def validate_json_schema(data:dict):
 
     if "tests" not in data:
@@ -69,4 +75,7 @@ def validate_json_data_types(data:dict):
             raise TypeError(f"timestamp in test {index} isn't a string")
 
 
-
+def validate_status_field(data:dict):
+    for index, test in enumerate(data["tests"]):
+        if not test["status"] in allowed_status:
+            raise ValueError(f"status value of test {index} is invalid")
