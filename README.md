@@ -1,6 +1,6 @@
-# DataConverter
+# TestDataProcessor
 
-`DataConverter` is a small Python command-line tool for converting autonomous vehicle test data between `JSON`, `YAML`, and `CSV`.
+`TestDataProcessor` is a small Python command-line tool for converting autonomous vehicle test data between `JSON`, `YAML`, and `CSV`.
 
 The current implementation reads input files from [`input/`](/home/adelelakour/DataConverter/input), validates the test records, and writes the converted result to [`output/`](/home/adelelakour/DataConverter/output).
 
@@ -15,7 +15,7 @@ The current implementation reads input files from [`input/`](/home/adelelakour/D
 ## Project Structure
 
 ```text
-DataConverter/
+TestDataProcessor/
 ├── converter.py      # CLI entry point
 ├── parsers.py        # Input readers
 ├── writers.py        # Output writers
