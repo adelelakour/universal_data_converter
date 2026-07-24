@@ -21,11 +21,13 @@ allowed_status = [
     "Failed"
 ]
 
-
 def validate_schema(data:dict):
 
     if "tests" not in data:
-        raise ValueError("Missing 'tests' section.")
+        raise KeyError("Missing 'tests' key")
+
+    if len(data["tests"]) == 0:
+        raise ValueError("tests list is empty")
 
     for index, test in enumerate(data["tests"]):
         for key in required_fields:
@@ -76,3 +78,4 @@ def validate_status_field(data:dict):
     for index, test in enumerate(data["tests"]):
         if not test["status"] in allowed_status:
             raise ValueError(f"status value of test {index} is invalid")
+
