@@ -1,0 +1,21 @@
+id,name,category,status,priority,duration,vehicle,environment,temperature,executed_by,timestamp
+1001,Emergency Braking,Safety,Passed,Critical,2.8,Car-A,Simulation,24,CI,2026-07-22T09:15:00Z
+1002,Lane Keeping,Perception,Failed,Critical,6.4,Car-A,Real,31,Alice,2026-07-22T09:40:00Z
+1003,Parking Assist,Planning,Passed,Medium,8.1,Car-B,Simulation,22,Bob,2026-07-22T10:10:00Z
+1004,Adaptive Cruise Control,Control,Failed,High,4.7,Car-C,Real,28,CI,2026-07-22T10:45:00Z
+1005,Traffic Sign Recognition,Perception,Passed,High,3.2,Car-B,Simulation,25,Alice,2026-07-22T11:15:00Z
+1006,Pedestrian Detection,Safety,Failed,Critical,7.5,Car-C,Real,35,Bob,2026-07-22T11:40:00Z
+1007,Overtaking Maneuver,Planning,Passed,High,9.2,Car-A,Simulation,23,CI,2026-07-22T12:05:00Z
+1008,Night Vision Enhancement,Perception,Passed,Critical,5.5,Car-B,Real,15,Alice,2026-07-22T22:30:00Z
+1009,Obstacle Avoidance,Safety,Failed,Critical,3.8,Car-A,Simulation,23,CI,2026-07-22T13:10:00Z
+1010,Highway Merge,Planning,Passed,High,12.1,Car-C,Real,29,Bob,2026-07-22T14:00:00Z
+1011,Stop Sign Compliance,Control,Passed,High,4.2,Car-B,Simulation,22,CI,2026-07-22T14:30:00Z
+1012,Rain Sensor Calibration,Perception,Failed,Medium,6.7,Car-A,Real,18,Alice,2026-07-22T15:15:00Z
+1013,Automatic Parallel Parking,Planning,Passed,Low,15.3,Car-B,Real,26,Bob,2026-07-22T16:00:00Z
+1014,Cross Traffic Alert,Safety,Passed,High,3.5,Car-C,Simulation,24,CI,2026-07-22T16:45:00Z
+1015,Driver Drowsiness Detection,Perception,Passed,Medium,2.1,Car-A,Simulation,22,Alice,2026-07-22T17:20:00Z
+1016,Blind Spot Monitoring,Safety,Failed,High,4.8,Car-B,Real,32,Bob,2026-07-22T18:05:00Z
+1017,Steering Actuator Latency,Control,Passed,Critical,1.5,Car-C,Simulation,25,CI,2026-07-22T18:40:00Z
+1018,Intersection Navigation,Planning,Passed,Critical,10.4,Car-A,Real,28,Alice,2026-07-22T19:15:00Z
+1019,Traffic Light Detection,Perception,Passed,High,2.9,Car-B,Simulation,23,CI,2026-07-22T20:00:00Z
+1020,Emergency Pull-over,Safety,Failed,Critical,8.6,Car-C,Real,27,Bob,2026-07-22T20:45:00Z

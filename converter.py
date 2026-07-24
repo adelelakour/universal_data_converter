@@ -2,16 +2,14 @@
 import parsers
 import writers
 import validator
-import sys
-from pathlib import Path
+import utils
+
+
 
 
 def main() -> None:
-    input_file_name = sys.argv[1]
-    output_file_name = sys.argv[2]
-    #file paths
-    INPUT_FILE = Path("input") / input_file_name
-    OUTPUT_FILE = Path("output") / output_file_name
+
+    INPUT_FILE, OUTPUT_FILE = utils.get_files_from_user()
 
     if INPUT_FILE.suffix == ".json":
         retrieved_data = parsers.read_json(INPUT_FILE)
