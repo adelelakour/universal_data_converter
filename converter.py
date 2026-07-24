@@ -5,41 +5,23 @@ import validator
 import utils
 
 
-
-
 def main() -> None:
 
     INPUT_FILE, OUTPUT_FILE = utils.get_files_from_user()
 
     if INPUT_FILE.suffix == ".json":
         retrieved_data = parsers.read_json(INPUT_FILE)
-        try:
-            validator.validate_schema(retrieved_data)
-            validator.validate_data_types(retrieved_data)
-            validator.validate_status_field(retrieved_data)
-        except (KeyError, ValueError, TypeError) as e:
-            print(f"Error message is {e}")
-            return
-
     elif INPUT_FILE.suffix == ".csv":
         retrieved_data = parsers.read_csv(INPUT_FILE)
-        try:
-            validator.validate_schema(retrieved_data)
-            validator.validate_data_types(retrieved_data)
-            validator.validate_status_field(retrieved_data)
-        except (KeyError, ValueError, TypeError) as e:
-            print(f"Error message is {e}")
-            return
-
     elif INPUT_FILE.suffix == ".yaml":
         retrieved_data = parsers.read_yaml(INPUT_FILE)
-        try:
-            validator.validate_schema(retrieved_data)
-            validator.validate_data_types(retrieved_data)
-            validator.validate_status_field(retrieved_data)
-        except (KeyError, ValueError, TypeError) as e:
-            print(f"Error message is {e}")
-            return
+
+    try:
+        validator.validate_schema(retrieved_data)
+        validator.validate_data_types(retrieved_data)
+        validator.validate_status_field(retrieved_data)
+    except (KeyError, ValueError, TypeError) as e:
+        print(f"Error message is {e}")
 
 
     if OUTPUT_FILE.suffix == ".json":
